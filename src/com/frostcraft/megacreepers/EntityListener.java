@@ -1,8 +1,5 @@
 package com.frostcraft.megacreepers;
 
-
-import javax.persistence.Entity;
-
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
