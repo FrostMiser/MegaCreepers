@@ -2,7 +2,7 @@
 
 MegaCreepers
 =============
-This is a Minecraft Bukkit plugin greatly increases the difficulty and destructive power of creepers.
+This is a Minecraft Bukkit plugin greatly increases the difficulty and destructive power of creepers. WARNING: Creeper explosions are much more powerful than usual!
 
 
 Creeper Enhancements
