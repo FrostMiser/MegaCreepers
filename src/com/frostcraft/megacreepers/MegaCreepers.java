@@ -11,11 +11,13 @@ public class MegaCreepers extends JavaPlugin {
 
 	public static int creeperBlastPower;
 	public static boolean creeperPowered;
+	public static double creeperHealth;
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
 		creeperBlastPower = this.getConfig().getInt("creeper-blast-power");
 		creeperPowered = this.getConfig().getBoolean("all-creepers-powered");
+		creeperHealth = this.getConfig().getDouble("creeper-health");
 		
 		getServer().getPluginManager().registerEvents(new EntityListener(),this);
 		this.getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[MegaCreepers] Plugin Enabled.");
@@ -26,6 +28,7 @@ public class MegaCreepers extends JavaPlugin {
 	public void onDisable() {
 		this.getConfig().set("creeper-blast-power", creeperBlastPower);
 		this.getConfig().set("all-creepers-powered",creeperPowered);
+		this.getConfig().set("creeper-health",creeperHealth);
 		
 		this.getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MegaCreepers] Plugin Disabled.");
 	}
@@ -83,6 +86,18 @@ public class MegaCreepers extends JavaPlugin {
 							p.sendMessage(ChatColor.RED + "Invalid option, options are On or Off.");
 						}
 					}
+					if (args[0].equals("sethealth")) {
+						try { Integer.parseInt(args[1]); }
+						catch (Exception e) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
+						int healthAmount = Integer.parseInt(args[1]);
+
+						if (healthAmount < 0 || healthAmount > 20) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
+						
+						this.getConfig().set("creeper-health", healthAmount);
+						creeperHealth = healthAmount;
+						this.saveConfig();
+						p.sendMessage(ChatColor.AQUA + "Health set to " + creeperHealth);
+					}					
 				}
 			}
 		}

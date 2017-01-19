@@ -1,5 +1,6 @@
 package com.frostcraft.megacreepers;
 
+import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
@@ -32,11 +33,19 @@ public class EntityListener implements Listener {
 
 	}	
 	
+	@EventHandler
 	public void onEntitySpawn(CreatureSpawnEvent event) {
+			Creeper creeper;
 			if (!event.getEntity().getType().equals(EntityType.CREEPER) && event.getSpawnReason().equals(SpawnReason.CUSTOM)) {
-				Creeper creeper = (Creeper) event.getLocation().getWorld().spawnEntity(event.getLocation(), EntityType.CREEPER);
-				creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(100.0);
-				creeper.setHealth(100.0);
-			}	
+				creeper = (Creeper) event.getLocation().getWorld().spawnEntity(event.getLocation(), EntityType.CREEPER);
+			}
+			else {
+				creeper = (Creeper) event.getEntity();
+			}
+
+			creeper.setHealth(MegaCreepers.creeperHealth);
+			creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MegaCreepers.creeperHealth);
+			Bukkit.getServer().broadcastMessage("Health" + creeper.getHealth());
+			
 	}
 }
