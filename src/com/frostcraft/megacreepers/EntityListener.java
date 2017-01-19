@@ -22,9 +22,12 @@ public class EntityListener implements Listener {
 	
 	@EventHandler
 	public void onEntityExplode(EntityExplodeEvent event) {
-		if (event.getEntityType().equals(EntityType.CREEPER)) {
-			event.getLocation().getWorld().createExplosion(event.getLocation(), 10);			
-		}
+			if (event.getEntityType().equals(EntityType.CREEPER)) {
+				if (MegaCreepers.creeperBlastPower > 0) {
+					event.getLocation().getWorld().createExplosion(event.getLocation(), MegaCreepers.creeperBlastPower);					
+				}
+			}			
+
 	}	
 	
 	public void onEntitySpawn(CreatureSpawnEvent event) {
