@@ -45,7 +45,5 @@ public class EntityListener implements Listener {
 
 			creeper.setHealth(MegaCreepers.creeperHealth);
 			creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MegaCreepers.creeperHealth);
-			Bukkit.getServer().broadcastMessage("Health" + creeper.getHealth());
-			
 	}
 }
