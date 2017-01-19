@@ -55,6 +55,7 @@ public class MegaCreepers extends JavaPlugin {
 					p.sendMessage("============================");
 					p.sendMessage(ChatColor.GREEN + "setblast [1-20] " + ChatColor.AQUA + "Set creeper blast power. (currently " + creeperBlastPower + ")");
 					p.sendMessage(ChatColor.GREEN + "powered [On|Off] " + ChatColor.AQUA + "All all powered creepers (on or off). (currently " + (creeperPowered?"On":"Off") + ")");
+					p.sendMessage(ChatColor.GREEN + "sethealth [1-20] " + ChatColor.AQUA + "Set creeper health. (currently " + creeperHealth + ")");
 				}
 				else {
 					if (args[0].equals("setblast")) {
