@@ -10,10 +10,12 @@ import org.bukkit.entity.Player;
 public class MegaCreepers extends JavaPlugin {
 
 	public static int creeperBlastPower;
+	public static boolean creeperPowered;
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
 		creeperBlastPower = this.getConfig().getInt("creeper-blast-power");
+		creeperPowered = this.getConfig().getBoolean("all-creepers-powered");
 		
 		getServer().getPluginManager().registerEvents(new EntityListener(),this);
 		this.getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[MegaCreepers] Plugin Enabled.");
@@ -23,6 +25,7 @@ public class MegaCreepers extends JavaPlugin {
 
 	public void onDisable() {
 		this.getConfig().set("creeper-blast-power", creeperBlastPower);
+		this.getConfig().set("all-creepers-powered",creeperPowered);
 		
 		this.getServer().getConsoleSender().sendMessage(ChatColor.RED + "[MegaCreepers] Plugin Disabled.");
 	}
@@ -48,6 +51,7 @@ public class MegaCreepers extends JavaPlugin {
 					p.sendMessage(ChatColor.GREEN + "/mcreepers options");
 					p.sendMessage("============================");
 					p.sendMessage(ChatColor.GREEN + "setblast [1-20] " + ChatColor.AQUA + "Set creeper blast power. (currently " + creeperBlastPower + ")");
+					p.sendMessage(ChatColor.GREEN + "powered" + ChatColor.AQUA + "Toggles powered creepers. (currently " + creeperPowered + ")");
 				}
 				else {
 					if (args[0].equals("setblast")) {
@@ -61,7 +65,23 @@ public class MegaCreepers extends JavaPlugin {
 						creeperBlastPower = blastAmount;
 						this.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Blast power set to " + creeperBlastPower);
-												
+					}
+					else if (args[0].equals("powered")) {
+						if (args[1].equalsIgnoreCase("off")) {
+							creeperPowered = false;
+							p.sendMessage(ChatColor.AQUA + "All creepers powered is now Off.");
+							this.getConfig().set("all-creepers-powered",creeperPowered);
+							this.saveConfig();
+						}
+						else if (args[1].equalsIgnoreCase("on")) {
+							creeperPowered = true;
+							p.sendMessage(ChatColor.AQUA + "All creepers powered is now On.");
+							this.getConfig().set("all-creepers-powered",creeperPowered);
+							this.saveConfig();
+						}						
+						else {
+							p.sendMessage(ChatColor.RED + "Invalid option, options are On or Off.");
+						}
 					}
 				}
 			}

@@ -14,10 +14,12 @@ public class EntityListener implements Listener {
 	
 	@EventHandler
 	public void onEntitySpawn(EntitySpawnEvent event) {
-		if (event.getEntity().getType().equals(EntityType.CREEPER)) {
-			Creeper creeper = (Creeper) event.getEntity();
-			creeper.setPowered(true);
-		}
+		if (MegaCreepers.creeperPowered) {
+			if (event.getEntity().getType().equals(EntityType.CREEPER)) {
+				Creeper creeper = (Creeper) event.getEntity();
+				creeper.setPowered(true);
+			}
+		}	
 	}
 	
 	@EventHandler
@@ -31,10 +33,10 @@ public class EntityListener implements Listener {
 	}	
 	
 	public void onEntitySpawn(CreatureSpawnEvent event) {
-		if (!event.getEntity().getType().equals(EntityType.CREEPER) && event.getSpawnReason().equals(SpawnReason.CUSTOM)) {
-			Creeper creeper = (Creeper) event.getLocation().getWorld().spawnEntity(event.getLocation(), EntityType.CREEPER);
-			creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(100.0);
-			creeper.setHealth(100.0);
-		}
+			if (!event.getEntity().getType().equals(EntityType.CREEPER) && event.getSpawnReason().equals(SpawnReason.CUSTOM)) {
+				Creeper creeper = (Creeper) event.getLocation().getWorld().spawnEntity(event.getLocation(), EntityType.CREEPER);
+				creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(100.0);
+				creeper.setHealth(100.0);
+			}	
 	}
 }
