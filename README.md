@@ -14,9 +14,9 @@ Creeper Enhancements
 
 Commands
 =============
-/mcreeper setblast [1-20] - Set creeper blast power. Setting this to 0 turns off enhanced creeper blasts.
-/mcreeper powered [on|off] - When on, all creepers spawn as powered. When off, creeper powered status returns to the default behavior.
-/mcreeper sethealth [1-20] - Sets the health creepers spawn with.
+* /mcreeper setblast [1-20] - Set creeper blast power. Setting this to 0 turns off enhanced creeper blasts.
+* /mcreeper powered [on|off] - When on, all creepers spawn as powered. When off, creeper powered status returns to the default behavior.
+* /mcreeper sethealth [1-20] - Sets the health creepers spawn with.
 
 Permissions
 =============
