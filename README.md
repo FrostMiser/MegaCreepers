@@ -10,6 +10,7 @@ Creeper Enhancements
 * All creepers spawned in the world are powered creepers
 * Creeper explosions are much more powerful
 * Creepers spawn in with 20 hitpoints
+* Creepers spawn in with fast speed
 
 
 Commands
@@ -17,6 +18,7 @@ Commands
 * /mcreeper setblast [1-20] - Set creeper blast power. Setting this to 0 turns off enhanced creeper blasts.
 * /mcreeper powered [on|off] - When on, all creepers spawn as powered. When off, creeper powered status returns to the default behavior.
 * /mcreeper sethealth [1-20] - Sets the health creepers spawn with.
+* /mcreeper setspeed [1-20] - Sets the speed creepers spawn with.
 
 Permissions
 =============
