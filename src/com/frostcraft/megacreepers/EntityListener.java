@@ -41,6 +41,7 @@ public class EntityListener implements Listener {
 				Creeper creeper = (Creeper) event.getEntity();
 				creeper.setHealth(MegaCreepers.creeperHealth);
 				creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MegaCreepers.creeperHealth);
+				creeper.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(MegaCreepers.creeperSpeed);
 			}
 
 

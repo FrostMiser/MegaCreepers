@@ -12,12 +12,14 @@ public class MegaCreepers extends JavaPlugin {
 	public static int creeperBlastPower;
 	public static boolean creeperPowered;
 	public static double creeperHealth;
+	public static double creeperSpeed;
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
 		creeperBlastPower = this.getConfig().getInt("creeper-blast-power");
 		creeperPowered = this.getConfig().getBoolean("all-creepers-powered");
 		creeperHealth = this.getConfig().getDouble("creeper-health");
+		creeperSpeed = this.getConfig().getDouble("creeper-speed");
 		
 		getServer().getPluginManager().registerEvents(new EntityListener(),this);
 		this.getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[MegaCreepers] Plugin Enabled.");
@@ -98,7 +100,19 @@ public class MegaCreepers extends JavaPlugin {
 						creeperHealth = healthAmount;
 						this.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Health set to " + creeperHealth);
-					}					
+					}
+					else if (args[0].equals("setspeed")) {
+						try { Integer.parseInt(args[1]); }
+						catch (Exception e) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
+						int speedAmount = Integer.parseInt(args[1]);
+
+						if (speedAmount < 0 || speedAmount > 20) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
+						
+						this.getConfig().set("creeper-speed", speedAmount/10);
+						creeperSpeed = speedAmount/10;
+						this.saveConfig();
+						p.sendMessage(ChatColor.AQUA + "Speed set to " + speedAmount);
+					}						
 				}
 			}
 		}
