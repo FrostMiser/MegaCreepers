@@ -71,7 +71,7 @@ public class MegaCreepers extends JavaPlugin {
 						this.getConfig().set("creeper-blast-power", blastAmount);
 						creeperBlastPower = blastAmount;
 						this.saveConfig();
-						p.sendMessage(ChatColor.AQUA + "Blast power set to " + creeperBlastPower);
+						p.sendMessage(ChatColor.AQUA + "Creeper blast power set to " + creeperBlastPower);
 					}
 					else if (args[0].equals("powered")) {
 						if (args[1].equalsIgnoreCase("off")) {
@@ -100,7 +100,7 @@ public class MegaCreepers extends JavaPlugin {
 						this.getConfig().set("creeper-health", healthAmount);
 						creeperHealth = healthAmount;
 						this.saveConfig();
-						p.sendMessage(ChatColor.AQUA + "Health set to " + creeperHealth);
+						p.sendMessage(ChatColor.AQUA + "Creeper health set to " + creeperHealth);
 					}
 					else if (args[0].equals("setspeed")) {
 						try { Integer.parseInt(args[1]); }
@@ -112,7 +112,7 @@ public class MegaCreepers extends JavaPlugin {
 						this.getConfig().set("creeper-speed", speedAmount/10);
 						creeperSpeed = speedAmount/10;
 						this.saveConfig();
-						p.sendMessage(ChatColor.AQUA + "Speed set to " + speedAmount);
+						p.sendMessage(ChatColor.AQUA + "Creeper speed set to " + speedAmount);
 					}						
 				}
 			}
