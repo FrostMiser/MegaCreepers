@@ -1,3 +1,4 @@
 creeper-blast-power: 10
 creeper-health: 20
 all-creepers-powered: true
+creeper-speed: 10
