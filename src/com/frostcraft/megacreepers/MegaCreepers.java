@@ -27,7 +27,6 @@ public class MegaCreepers extends JavaPlugin {
 		return;		
 	}
 
-
 	public void onDisable() {
 		this.getConfig().set("creeper-blast-power", creeperBlastPower);
 		this.getConfig().set("all-creepers-powered",creeperPowered);
