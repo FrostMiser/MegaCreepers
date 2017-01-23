@@ -36,8 +36,8 @@ public class MCreepers implements CommandExecutor  {
 					p.sendMessage(ChatColor.GREEN + "   MegaCreepers"); 
 					p.sendMessage(ChatColor.GREEN + "/mcreepers options");
 					p.sendMessage("============================");
-					p.sendMessage(ChatColor.GREEN + "setblast [1-20] " + ChatColor.AQUA + "Set creeper blast power. (currently " + MegaCreepers.creeperBlastPower + ")");
-					p.sendMessage(ChatColor.GREEN + "powered [On|Off] " + ChatColor.AQUA + "All all powered creepers (on or off). (currently " + (MegaCreepers.creeperPowered?"On":"Off") + ")");
+					p.sendMessage(ChatColor.GREEN + "setblast [0-20] " + ChatColor.AQUA + "Set creeper blast power. 0 to return to default (currently " + MegaCreepers.creeperBlastPower + ")");
+					p.sendMessage(ChatColor.GREEN + "powered [On|Off] " + ChatColor.AQUA + "All powered creepers (on or off). (currently " + (MegaCreepers.creeperPowered?"On":"Off") + ")");
 					p.sendMessage(ChatColor.GREEN + "sethealth [1-20] " + ChatColor.AQUA + "Set creeper health. (currently " + MegaCreepers.creeperHealth + ")");
 					p.sendMessage(ChatColor.GREEN + "setspeed [1-20] " + ChatColor.AQUA + "Set creeper speed. (currently " + MegaCreepers.creeperSpeed*10 + ")");
 				}
