@@ -35,8 +35,8 @@ public class EntityListener implements Listener {
 			//If a creeper is spawning, customize it
 			if (event.getEntity().getType().equals(EntityType.CREEPER)) {
 				Creeper creeper = (Creeper) event.getEntity();
-				creeper.setHealth(MegaCreepers.creeperHealth);
 				creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MegaCreepers.creeperHealth);
+				creeper.setHealth(MegaCreepers.creeperHealth);
 				creeper.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(MegaCreepers.creeperSpeed);
 			}
 	}
