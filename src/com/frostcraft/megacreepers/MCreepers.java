@@ -76,7 +76,7 @@ public class MCreepers implements CommandExecutor  {
 						catch (Exception e) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
 						int healthAmount = Integer.parseInt(args[1]);
 
-						if (healthAmount < 0 || healthAmount > 20) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
+						if (healthAmount <= 0 || healthAmount > 20) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
 						
 						megaCreepers.getConfig().set("creeper-health", healthAmount);
 						MegaCreepers.creeperHealth = healthAmount;
