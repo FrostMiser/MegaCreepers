@@ -88,7 +88,7 @@ public class MCreepers implements CommandExecutor  {
 						catch (Exception e) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						int speedAmount = Integer.parseInt(args[1]);
 
-						if (speedAmount < 0 || speedAmount > 20) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
+						if (speedAmount <= 0 || speedAmount > 20) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						
 						megaCreepers.getConfig().set("creeper-speed", speedAmount/10);
 						MegaCreepers.creeperSpeed = speedAmount/10;
