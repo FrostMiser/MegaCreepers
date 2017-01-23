@@ -39,7 +39,7 @@ public class MCreepers implements CommandExecutor  {
 					p.sendMessage(ChatColor.GREEN + "setblast [0-20] " + ChatColor.AQUA + "Set creeper blast power. 0 to return to default (currently " + MegaCreepers.creeperBlastPower + ")");
 					p.sendMessage(ChatColor.GREEN + "powered [On|Off] " + ChatColor.AQUA + "All powered creepers (on or off). (currently " + (MegaCreepers.creeperPowered?"On":"Off") + ")");
 					p.sendMessage(ChatColor.GREEN + "sethealth [1-20] " + ChatColor.AQUA + "Set creeper health. (currently " + MegaCreepers.creeperHealth + ")");
-					p.sendMessage(ChatColor.GREEN + "setspeed [1-20] " + ChatColor.AQUA + "Set creeper speed. (currently " + MegaCreepers.creeperSpeed*10 + ")");
+//					p.sendMessage(ChatColor.GREEN + "setspeed [1-20] " + ChatColor.AQUA + "Set creeper speed. (currently " + MegaCreepers.creeperSpeed+ ")");
 				}
 				else {
 					if (args[0].equals("setblast")) {
@@ -83,18 +83,18 @@ public class MCreepers implements CommandExecutor  {
 						megaCreepers.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Creeper health set to " + MegaCreepers.creeperHealth);
 					}
-					else if (args[0].equals("setspeed")) {
+				/*	else if (args[0].equals("setspeed")) {
 						try { Integer.parseInt(args[1]); }
 						catch (Exception e) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						int speedAmount = Integer.parseInt(args[1]);
 
 						if (speedAmount <= 0 || speedAmount > 20) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						
-						megaCreepers.getConfig().set("creeper-speed", speedAmount/10);
-						MegaCreepers.creeperSpeed = speedAmount/10;
+						megaCreepers.getConfig().set("creeper-speed", speedAmount);
+						MegaCreepers.creeperSpeed = (speedAmount/10);
 						megaCreepers.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Creeper speed set to " + speedAmount);
-					}						
+					}*/						
 				}
 			}
 		}

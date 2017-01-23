@@ -10,14 +10,14 @@ public class MegaCreepers extends JavaPlugin {
 	public static int creeperBlastPower;
 	public static boolean creeperPowered;
 	public static double creeperHealth;
-	public static double creeperSpeed;
+	public static float creeperSpeed;
 	
 	public void onEnable() {
 		this.saveDefaultConfig();
 		creeperBlastPower = this.getConfig().getInt("creeper-blast-power");
 		creeperPowered = this.getConfig().getBoolean("all-creepers-powered");
 		creeperHealth = this.getConfig().getDouble("creeper-health");
-		creeperSpeed = this.getConfig().getDouble("creeper-speed");
+		creeperSpeed = (this.getConfig().getInt("creeper-speed"))/10;
 		
 		//Register mcreepers command to mcreepers class
 		getCommand("mcreepers").setExecutor(new MCreepers(this));
