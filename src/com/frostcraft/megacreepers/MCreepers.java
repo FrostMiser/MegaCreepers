@@ -71,7 +71,7 @@ public class MCreepers implements CommandExecutor  {
 							p.sendMessage(ChatColor.RED + "Invalid option, options are On or Off.");
 						}
 					}
-					if (args[0].equals("sethealth")) {
+					else if (args[0].equals("sethealth")) {
 						try { Integer.parseInt(args[1]); }
 						catch (Exception e) { p.sendMessage(ChatColor.RED + "Health must be a number between 1 and 20");return true;}
 						int healthAmount = Integer.parseInt(args[1]);
