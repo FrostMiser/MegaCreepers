@@ -36,10 +36,10 @@ public class MCreepers implements CommandExecutor  {
 					p.sendMessage(ChatColor.GREEN + "   MegaCreepers"); 
 					p.sendMessage(ChatColor.GREEN + "/mcreepers options");
 					p.sendMessage("============================");
-					p.sendMessage(ChatColor.GREEN + "setblast [0-20] " + ChatColor.AQUA + "Set creeper blast power. 0 to return to default (currently " + MegaCreepers.creeperBlastPower + ")");
+					p.sendMessage(ChatColor.GREEN + "setblast [1-20] " + ChatColor.AQUA + "Set creeper blast power. 0 to return to default (currently " + MegaCreepers.creeperBlastPower + ")");
 					p.sendMessage(ChatColor.GREEN + "powered [On|Off] " + ChatColor.AQUA + "All powered creepers (on or off). (currently " + (MegaCreepers.creeperPowered?"On":"Off") + ")");
 					p.sendMessage(ChatColor.GREEN + "sethealth [1-20] " + ChatColor.AQUA + "Set creeper health. (currently " + MegaCreepers.creeperHealth + ")");
-//					p.sendMessage(ChatColor.GREEN + "setspeed [1-20] " + ChatColor.AQUA + "Set creeper speed. (currently " + MegaCreepers.creeperSpeed+ ")");
+					p.sendMessage(ChatColor.GREEN + "setspeed [1-20] " + ChatColor.AQUA + "Set creeper speed. (currently " + MegaCreepers.creeperSpeed+ ")");
 				}
 				else {
 					if (args[0].equals("setblast")) {
@@ -83,7 +83,7 @@ public class MCreepers implements CommandExecutor  {
 						megaCreepers.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Creeper health set to " + MegaCreepers.creeperHealth);
 					}
-				/*	else if (args[0].equals("setspeed")) {
+					else if (args[0].equals("setspeed")) {
 						try { Integer.parseInt(args[1]); }
 						catch (Exception e) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						int speedAmount = Integer.parseInt(args[1]);
@@ -91,10 +91,10 @@ public class MCreepers implements CommandExecutor  {
 						if (speedAmount <= 0 || speedAmount > 20) { p.sendMessage(ChatColor.RED + "Speed must be a number between 1 and 20");return true;}
 						
 						megaCreepers.getConfig().set("creeper-speed", speedAmount);
-						MegaCreepers.creeperSpeed = (speedAmount/10);
+						MegaCreepers.creeperSpeed = speedAmount;
 						megaCreepers.saveConfig();
 						p.sendMessage(ChatColor.AQUA + "Creeper speed set to " + speedAmount);
-					}*/						
+					}						
 				}
 			}
 		}

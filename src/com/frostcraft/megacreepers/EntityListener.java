@@ -28,7 +28,7 @@ public class EntityListener implements Listener {
 					event.getLocation().getWorld().createExplosion(event.getLocation(), MegaCreepers.creeperBlastPower);					
 			}
 		}			
-	}	
+	}
 	
 	@EventHandler
 	public void onEntitySpawn(CreatureSpawnEvent event) {	
@@ -37,7 +37,8 @@ public class EntityListener implements Listener {
 				Creeper creeper = (Creeper) event.getEntity();
 				creeper.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(MegaCreepers.creeperHealth);
 				creeper.setHealth(MegaCreepers.creeperHealth);
-				//creeper.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(MegaCreepers.creeperSpeed);
+				double speed = creeper.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).getValue();
+				creeper.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(speed * MegaCreepers.creeperSpeed);
 			}
 	}
 }

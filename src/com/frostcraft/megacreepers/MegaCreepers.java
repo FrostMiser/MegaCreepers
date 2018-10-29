@@ -17,7 +17,7 @@ public class MegaCreepers extends JavaPlugin {
 		creeperBlastPower = this.getConfig().getInt("creeper-blast-power");
 		creeperPowered = this.getConfig().getBoolean("all-creepers-powered");
 		creeperHealth = this.getConfig().getDouble("creeper-health");
-		creeperSpeed = (this.getConfig().getInt("creeper-speed"))/10;
+		creeperSpeed = (this.getConfig().getInt("creeper-speed"));
 		
 		//Register mcreepers command to mcreepers class
 		getCommand("mcreepers").setExecutor(new MCreepers(this));
